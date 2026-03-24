@@ -6,7 +6,7 @@ create table utilisateur(
     nom varchar(50),
     prenom varchar(70),
     email varchar(100) unique,
-    password varchar(30),
+    password varchar(255),
     constraint user_pk primary key(id)
 );
 
@@ -32,7 +32,6 @@ create table participant(
 create table categorie(
     codeC int auto_increment,
     nomCat varchar(50),
-    idEvent int(8),
     constraint cat_pk primary key(codeC)
 );
 
@@ -43,9 +42,9 @@ create table evenement(
     date_E date,
     lieu varchar(100),
     statut varchar(20),
-    codeC int(8),
-    idOrg int(8),
-    idAdmin int(8),
+    codeC int,
+    idOrg int,
+    idAdmin int,
     constraint event_pk primary key(idEvent),
     constraint event_fk1 foreign key(idOrg) references organisateur(idOrg),
     constraint event_fk2 foreign key(idAdmin) references administrateur(idAdmin),
@@ -60,8 +59,8 @@ create table reservation(
     prixB int,
     qte int,
     status_R varchar(20),
-    idPar int(8),
-    idEvent int(8),
+    idPar int,
+    idEvent int,
     constraint resv_pk primary key(codeR),
     constraint resv_fk1 foreign key(idPar) references participant(idPar),
     constraint resv_fk2 foreign key(idEvent) references evenement(idEvent)
@@ -69,7 +68,7 @@ create table reservation(
 
 create table commentaire(
     idEvent int auto_increment,
-    idPar int(8),
+    idPar int,
     contenu varchar(100),
     dateC date,
     constraint comm_pk primary key(idEvent,idPar),
