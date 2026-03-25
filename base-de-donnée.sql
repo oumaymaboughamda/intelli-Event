@@ -53,7 +53,7 @@ create table evenement(
 
 create table reservation(
     codeR int auto_increment,
-    dateR date,
+    dateR DATE DEFAULT CURRENT_DATE,
     nbPlace int,
     billetN varchar(100),
     prixB int,
@@ -69,7 +69,7 @@ create table commentaire(
     idEvent int,
     idPar int,
     contenu varchar(100),
-    dateC date,
+    dateC DATE DEFAULT CURRENT_DATE,
     constraint comm_pk primary key(idEvent,idPar),
     constraint comm_fk1 foreign key(idEvent) references evenement(idEvent),
     constraint comm_fk2 foreign key(idPar) references participant(idPar)
