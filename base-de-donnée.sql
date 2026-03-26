@@ -5,8 +5,9 @@ create table utilisateur(
     id int auto_increment,
     nom varchar(50),
     prenom varchar(70),
-    email varchar(100) unique,
+    email varchar(555) unique,
     password varchar(255),
+    roles varchar(100),
     constraint user_pk primary key(id)
 );
 
@@ -41,6 +42,7 @@ create table evenement(
     descriptions varchar(100),
     date_E date,
     lieu varchar(100),
+    image varchar(1000),
     statut varchar(20),
     codeC int,
     idOrg int,
