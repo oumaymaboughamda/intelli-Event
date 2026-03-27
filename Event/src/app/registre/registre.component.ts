@@ -2,6 +2,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
+import { EventService } from '../services/event.service';
 
 @Component({
   selector: 'app-registre',
@@ -15,16 +16,33 @@ export class RegistreComponent {
   prenom: string;
   email: string;
   password: string;
+  roles: string; 
 
-  constructor(private router: Router) {
+  constructor(private eventService: EventService, private router: Router) {
     this.nom = '';
     this.prenom = '';
     this.email = '';
     this.password = '';
+    this.roles = 'participant'; 
   }
 
   onRegister() {
-    console.log('Nom:', this.nom);
-    this.router.navigate(['/login']);
+    const userData = {
+      nom: this.nom,
+      prenom: this.prenom,
+      email: this.email,
+      password: this.password,
+      roles: this.roles 
+    };
+
+    this.eventService.register(userData).subscribe({
+      next: (res) => {
+        alert('Compte créé avec succès !');
+        this.router.navigate(['/login']);
+      },
+      error: (err) => {
+        console.error('Erreur inscription', err);
+      }
+    });
   }
 }

@@ -1,15 +1,19 @@
 
 <div class="box">
   <h2>Connexion</h2>
+
   <div class="champ">
     <label>Email</label>
-    <input type="email" name="email" [(ngModel)]="email">
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Email">
   </div>
+
   <div class="champ">
     <label>Mot de passe</label>
-    <input type="password" name="password" [(ngModel)]="password">
+    <input type="password" name="password" [(ngModel)]="password" placeholder="Mot de passe">
   </div>
+
   <button class="btn" (click)="onLogin()">SE CONNECTER</button>
+
   <div class="bas">
     <p>Vous n'avez pas de compte ? <a routerLink="/registre">S'inscrire</a></p>
   </div>

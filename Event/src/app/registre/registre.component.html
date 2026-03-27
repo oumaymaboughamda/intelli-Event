@@ -1,25 +1,32 @@
 
 <div class="box">
   <h2>Création d'un compte</h2>
+
   <div class="ligne">
     <div class="champ">
       <label>Nom</label>
-      <input type="text" name="nom" [(ngModel)]="nom">
+      <input type="text" name="nom" [(ngModel)]="nom" placeholder="Nom">
     </div>
     <div class="champ">
       <label>Prénom</label>
-      <input type="text" name="prenom" [(ngModel)]="prenom">
+      <input type="text" name="prenom" [(ngModel)]="prenom" placeholder="Prénom">
     </div>
   </div>
+
   <div class="champ">
     <label>Email</label>
-    <input type="email" name="email" [(ngModel)]="email">
+    <input type="email" name="email" [(ngModel)]="email" placeholder="Email">
   </div>
-  <div class="champ">
-    <label>Mot de passe</label>
-    <input type="password" name="password" [(ngModel)]="password">
+
+  <div class="ligne">
+    <div class="champ">
+      <label>Mot de passe</label>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="Mot de passe">
+    </div>
   </div>
+
   <button class="btn" (click)="onRegister()">S'INSCRIRE</button>
+
   <div class="bas">
     <p>Vous avez déjà un compte ? <a routerLink="/login">Se connecter</a></p>
   </div>
