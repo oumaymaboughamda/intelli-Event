@@ -1,0 +1,34 @@
+/* 🔹 Style global pour la composante principale */
+:host {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ebe6ec, #f0d8eb); /* fond moderne */
+}
+
+/* Wrapper qui centre le contenu */
+.app-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;  /* centre horizontal */
+  align-items: center;      /* centre vertical */
+  padding: 20px;
+}
+
+/* Animation générale pour tous les containers */
+.app-wrapper > * {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation fadeIn */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

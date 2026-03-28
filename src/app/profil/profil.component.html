@@ -1,0 +1,30 @@
+<div class="profil-wrapper">
+  <div class="profil-card">
+    <div class="avatar-circle">
+      {{ user?.nom?.charAt(0) }}{{ user?.prenom?.charAt(0) }}
+    </div>
+    
+    <h2>Mon Profil</h2>
+
+    <div class="info-group" *ngIf="user">
+      <div class="info-item">
+        <label>Nom & Prénom</label>
+        <p>{{ user.nom }} {{ user.prenom }}</p>
+      </div>
+
+      <div class="info-item">
+        <label>E-mail</label>
+        <p>{{ user.email }}</p>
+      </div>
+
+      <div class="info-item" *ngIf="user.genre">
+        <label>Genre</label>
+        <p>{{ user.genre }}</p>
+      </div>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> Se déconnecter
+    </button>
+  </div>
+</div>
