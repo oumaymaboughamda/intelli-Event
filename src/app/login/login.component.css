@@ -83,7 +83,7 @@ button:hover {
 /* Message erreurr */
 .message {
   margin-top: 10px;
-  color: red;
+  color: rgb(221, 8, 8);
   font-size: 14px;
 }
 
